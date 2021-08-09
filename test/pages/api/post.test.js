@@ -1,10 +1,14 @@
-import { expect } from '@jest/globals'
+import { expect, jest } from '@jest/globals'
+import nc from 'next-connect'
 import prisma from '../../../lib/adapters/prismaClient'
 import Post from '../../../lib/models/post'
+import multer from 'multer'
 
 describe('Everything posts', () => {
+  jest.mock('next-connect')
   jest.mock('../../../lib/adapters/prismaClient')
   jest.mock('../../../lib/models/post')
+  jest.mock('multer')
 
   const testPostData = {
     user_id : 99,
@@ -12,6 +16,15 @@ describe('Everything posts', () => {
     image_url : "/",
     like_count : 0,
   }
+
+  const upload = multer({
+    storage: multer.diskStorage({
+      destination: './public/uploads',
+      filename: (req, file, cb) => cb(null, file.originalname),
+    })
+  })
+
+  const uploadMiddleWare = upload.single('file')
 
   afterEach(async () => {
     await prisma.posts.deleteMany()
@@ -40,5 +53,13 @@ describe('Everything posts', () => {
     }).catch(err => {
       expect(err).toBe(err)
     })
+  })
+
+  test('should store a picture', async () => {
+    const handler = nc()
+      .use(uploadMiddleWare)
+      .post((req, res) => {
+        expect(res).toBe(200)
+      })
   })
 })
