@@ -9,14 +9,17 @@ datasource db {
 
 model users {
   id       Int    @id @default(autoincrement())
+  avatar_url String
   username String @unique @db.VarChar(255)
   password String @db.VarChar(255)
   email    String @unique @db.VarChar(255)
+  posts    posts[]
 }
 
 model posts {
   post_id Int @id @default(autoincrement())
-  user_id Int 
+  user_id Int
+  author users @relation(fields: [user_id], references: [id]) 
   image_url String
   content String
   like_count Int

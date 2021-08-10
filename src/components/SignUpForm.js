@@ -14,6 +14,7 @@ const SignUpForm = () => {
   const router = useRouter()
   
   const userParams = {
+    avatar_url: '',
     username: username,
     password: password,
     email: email,
