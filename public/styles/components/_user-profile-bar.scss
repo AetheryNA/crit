@@ -1,0 +1,25 @@
+.user-profile-bar {
+  width: 100%;
+
+  &__pfp {
+    img {
+      border-radius: 50%;
+      width: 75px;
+
+      @include tablet {
+        width: 150px;
+      }
+    }
+
+    h3 {
+      margin-left: 15px;
+      font-size: 1.25rem;
+      font-weight: $semi-bold;
+
+      @include tablet {
+        margin-left: 20px;
+        font-size: 3.875rem;
+      }
+    }
+  }
+}

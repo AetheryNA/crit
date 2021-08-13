@@ -1,0 +1,12 @@
+.user-profile-friends {
+  max-width: 80%;
+
+  &__friend {
+    img {
+      margin-right: 10px;
+      border-radius: 50%;
+      height: 35px;
+      width: 35px;
+    }
+  }
+}

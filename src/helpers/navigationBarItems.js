@@ -16,7 +16,7 @@ const navigationItems = [
   {
     name: 'User',
     className: 'aside__nav-item',
-    href: '/',
+    href: '/profile',
     svg: <UserSVG />,
     isActive: false,
   },

@@ -1,0 +1,95 @@
+.settings-profile-edit {
+  &__pfp {
+    margin-bottom: 40px;
+    cursor: pointer;
+    max-width: 110px;
+    position: relative;
+
+    &:hover {
+      svg {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      height: 110px;
+      width: 110px;
+    }
+
+    svg {
+      color: $black-grey;
+      fill: $white;
+      height: 35px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: $basic-transition;
+      width: 35px;
+    }
+  }
+
+  &__title {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 20px;
+
+    h3 {
+      color: $white;
+      font-size: 	1.1375rem;
+      font-weight: $semi-bold;
+      font-family: $raleway;
+      text-transform: uppercase;
+    }
+
+    svg {
+      margin-right: 15px;
+      color: $white;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__field {
+    margin-bottom: 20px;
+    padding: 0 20px;
+    background-color: $semi-dark-grey;
+    cursor: pointer;
+    height: 100px;
+    position: relative;
+    transition: $basic-transition;
+
+    @include tablet {
+      max-width: 350px;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      color: $orange;
+      font-size: 	0.9375rem;
+      font-weight: $semi-bold;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    svg {
+      margin-left: auto;
+      bottom: 20px;
+      color: $white;
+      fill: transparent;
+      position: absolute;
+      right: 20px;
+      width: 35px;
+    }
+  }
+}

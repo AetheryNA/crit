@@ -1,0 +1,101 @@
+.user-profile-settings {
+  z-index: 10;
+
+  &__button {
+    background-color: $white;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 30px;
+    transition: $basic-transition;
+    width: 30px;
+
+    @include tablet {
+      height: 45px;
+      width: 45px;
+    }
+
+    svg {
+      color: $black-grey;
+      width: 16px;
+
+      @include tablet {
+        width: 25px;
+      }
+    }
+
+    &:hover {
+      background-color: $orange;
+
+      svg {
+        color: $white;
+      }
+    }
+  }
+
+  &__close {
+    top: 20px;
+    right: 20px;
+
+    button {
+      height: 35px;
+      transform: rotate(45deg);
+      width: 35px;
+  
+      svg {
+        fill: transparent;
+        color: $orange;
+      }
+    }
+  }
+
+  &__col {
+    background-color: $black;
+    position: relative;
+
+    &--1 {
+      background-color: $dark-grey;
+    }
+
+    &--2 {
+      ul {
+        padding: 0 60px;
+      }
+
+      li {
+        margin-bottom: 50px;
+
+        &:first-child {
+          color: $orange;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        color: $dark-grey;
+        font-size: 	1.1375rem;
+        font-weight: $semi-bold;
+        font-family: $raleway;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__close-col {
+    right: -18%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    button {
+      height: 50px;
+      transform: rotate(45deg);
+      width: 50px;
+
+      svg {
+        fill: $white;
+        color: $black;
+      }
+    }
+  }
+}

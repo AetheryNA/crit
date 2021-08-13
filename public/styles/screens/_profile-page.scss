@@ -1,0 +1,48 @@
+.profile-pg {
+  margin-top: 178px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  @include tablet {
+    margin-top: 265px;
+  }
+
+  &__dashboard {
+    margin-top: 30px;
+
+    h3 {
+      margin-bottom: 30px;
+      font-size: 15px;
+      font-weight: $semi-bold;
+      line-height: 1;
+      text-transform: uppercase;
+
+      svg {
+        margin-right: 15px;
+        color: $white;
+      }
+    }
+
+    .dashboard-left {
+      order: 2;
+
+      @include tablet {
+        margin-right: 60px;
+        order: 1;
+      }
+
+      .post-item {
+        margin-top: 20px;
+      }
+    }
+
+    .dashboard-right {
+      order: 1;
+
+      @include tablet {
+        order: 2;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.settings-navigation {
+  left: 20px;
+  position: absolute;
+  top: 20px;
+  
+  &__menu-btn {
+    color: $orange;
+    font-size: 1.1375rem;
+    font-family: $raleway;
+    text-transform: uppercase;
+
+    svg {
+      margin-left: 10px;
+    }
+  }
+
+  &__dropdown {
+    z-index: 9;
+
+    a {
+      color: $white;
+      font-size: .9375rem;
+      font-family: $raleway;
+      text-transform: uppercase;
+    }
+  }
+}

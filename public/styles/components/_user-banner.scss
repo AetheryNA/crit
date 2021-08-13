@@ -1,0 +1,42 @@
+.user-banner {
+  margin-top: -30px;
+  position: relative;
+
+  background: {
+    position: center 25%;
+    repeat: no-repeat;
+    size: cover;
+  }
+
+  height: 300px;
+  left: 0;
+  max-height: 300px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 20%;
+  }
+
+  &:before {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.625109418767507) 40%, rgba(255,255,255,0) 100%);
+    top: 0;
+  }
+
+  &:after {
+    background: linear-gradient(0, rgba(0,0,0,1) 0%, rgba(0,0,0,0.625109418767507) 40%, rgba(255,255,255,0) 100%);
+    bottom: 0;
+  }
+
+  @include tablet {
+    margin-top: -25px;
+    height: 465px;
+    max-height: 465px;
+  }
+}

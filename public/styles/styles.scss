@@ -17,6 +17,7 @@
 @import './screens/login';
 @import './screens/sign-up';
 @import './screens/quiz';
+@import './screens/profile-page';
 
 // Layouts
 @import './layouts/layout';
@@ -36,3 +37,10 @@
 @import './components/add-post';
 @import './components/post-item';
 @import './components/post-modal';
+@import './components/user-banner';
+@import './components/user-profile-bar';
+@import './components/user-profile-friends';
+@import './components/user-profile-recents';
+@import './components/user-profile-settings';
+@import './components/settings-navigation';
+@import './components/settings-profile-edit';
