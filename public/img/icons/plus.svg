@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
   <g id="Group_181" data-name="Group 181" transform="translate(-895 -128)">
-    <circle id="Ellipse_60" data-name="Ellipse 60" cx="7.5" cy="7.5" r="7.5" transform="translate(895 128)" fill="#fff"/>
-    <path id="plus" d="M8.55,4.05H4.95V.45a.45.45,0,0,0-.9,0v3.6H.45a.45.45,0,0,0,0,.9h3.6v3.6a.45.45,0,1,0,.9,0V4.95h3.6a.45.45,0,1,0,0-.9Zm0,0" transform="translate(898 131)"/>
+    <circle id="Ellipse_60" data-name="Ellipse 60" cx="7.5" cy="7.5" r="7.5" transform="translate(895 128)" fill="currentFill"/>
+    <path id="plus" d="M8.55,4.05H4.95V.45a.45.45,0,0,0-.9,0v3.6H.45a.45.45,0,0,0,0,.9h3.6v3.6a.45.45,0,1,0,.9,0V4.95h3.6a.45.45,0,1,0,0-.9Zm0,0" transform="translate(898 131)" fill="currentColor"/>
   </g>
 </svg>
