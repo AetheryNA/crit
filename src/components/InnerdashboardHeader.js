@@ -6,8 +6,10 @@ import AddPost from './AddPost'
 const InnerdashboardHeader = ({ router }) => {
   return (
     <div className="dashboard-header relative">
-      <Feed />
-      <h3> { dashboardHeaderTitle(router) } </h3> 
+      <div className="dashboard-header__title">
+        <Feed />
+        <h3> { dashboardHeaderTitle(router) } </h3> 
+      </div>
 
       { dashboardHeaderTitle(router) === 'activity feed' ?
         <AddPost /> 

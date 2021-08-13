@@ -21,7 +21,8 @@
     }
 
     svg {
-      color: $white;
+      fill: $white;
+      color: $black-grey;
     }
 
     h3 {
@@ -30,6 +31,15 @@
       font-weight: $semi-bold;
       line-height: 1;
       text-transform: uppercase;
+    }
+
+    &__title {
+      align-items: center;
+      display: flex;
+
+      svg {
+        color: $white;
+      }
     }
   }
 

@@ -2,6 +2,8 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 10;
 
   &__button {
     border-radius: 55px;

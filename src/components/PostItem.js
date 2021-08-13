@@ -31,11 +31,8 @@ const PostItem = ({ postItems }) => {
             {post.content}
           </p>
           <div className="post-item__social-status flex justify-end mt-6">
-            <div className="post-item__svg mr-2.5">
-              <Like />
-            </div>
             <div className="post-item__svg">
-              <Favourite />
+              <Like />
             </div>
           </div>
         </div>

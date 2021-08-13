@@ -1,6 +1,11 @@
 .post-item {
   padding: 20px;
+  margin-bottom: 20px;
   background-color: rgba($color: $white, $alpha: .02);
+
+  &:last-child {
+    margin-bottom: 60px;
+  }
 
   a {
     color: $white;

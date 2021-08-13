@@ -1,13 +1,19 @@
 import navItems from '../helpers/navigationBarItems'
 import Navigation from './Navigation'
 import ProfileInfo from './ProfileStatus'
+import useUser from '../../lib/auth/useUser'
 
 const Aside = () => {
   const navigationItems = navItems
+  const { user } = useUser()
 
   return (
     <aside className="app-aside">
-      <ProfileInfo />
+      { user ? 
+        <ProfileInfo />
+        :
+        ""
+      }
       <Navigation navigationItems={ navigationItems }/>
 
       <div className="app-aside__copyright">

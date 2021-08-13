@@ -1,7 +1,9 @@
 import { useState } from "react"
 import Image from 'next/image'
+import useUser from '../../lib/auth/useUser'
 
 const ProfileStatus = () => {
+  const { user } = useUser()
   const [statusTabActive, setstatusTabActive] = useState("false")
 
   const handleStatusTab = () => {
@@ -28,7 +30,7 @@ const ProfileStatus = () => {
         </div>
 
         <div className="profile__description">
-          <h3> Username </h3>
+          <h3> {user.username} </h3>
           <p> Online </p>
         </div>
       </div>
