@@ -5,7 +5,7 @@ describe('Getting all the posts from the posts table', () => {
   jest.mock('../../../lib/adapters/prismaClient')
 
   afterAll(() => {
-    prisma.$disconnect
+    prisma.$disconnect()
   })
 
   test('should fetch all posts', async () => {
