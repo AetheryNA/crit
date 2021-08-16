@@ -17,7 +17,7 @@ const index = ({ postItems }) => {
               <Feed />
               Your Feed
             </h3>
-            <PostItem postItems={postItems}/>
+            <PostItem postItems={postItems.findPosts}/>
           </div>
           <div className="dashboard-right">
             <h3 className="flex flex-row">

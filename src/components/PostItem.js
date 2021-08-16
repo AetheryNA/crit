@@ -2,10 +2,12 @@ import { useState } from 'react'
 import Like from '../../public/img/icons/like.svg'
 
 const PostItem = ({ postItems }) => {
-  const [postState, setPostState] = useState(postItems.findPosts)
+  const [postState, setPostState] = useState(postItems)
 
   const postedItem = postState.map((post, index) => {
     const userData = post.author
+
+    console.log(post);
 
     return(
       <div className="post-item" key={index}>

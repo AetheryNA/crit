@@ -1,7 +1,7 @@
 import useUser from "../../lib/auth/useUser"
 import UserProfileSettings from "../../src/components/UserProfileSettings"
 
-const UserProfileBar = () => {
+const UserProfileBar = ({ currentUser }) => {
   const { user } = useUser()
 
   return (
@@ -9,13 +9,19 @@ const UserProfileBar = () => {
     <div className="user-profile-bar flex flex-row items-center">
       <div className="user-profile-bar__pfp flex flex-row items-center">
         <img 
-          src='img/pfp.png'
+          src='/img/pfp.png'
         />
 
-        <h3> { user && (user.username) } </h3>
+        <h3> { currentUser ? currentUser[0].username : user && (user.username)} </h3>
       </div>
 
-      <UserProfileSettings />
+      { currentUser ? 
+       ''
+       : user && (
+        <UserProfileSettings />
+       )
+      }
+
     </div>
     </>
   )
