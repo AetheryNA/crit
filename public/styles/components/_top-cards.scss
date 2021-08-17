@@ -1,0 +1,72 @@
+.top-cards {
+  padding: 10px 0;
+  background-color: $darker-grey;
+
+  @include tablet {
+    padding: 20px 0;
+  }
+
+  &__header {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    svg {
+      fill: $white;
+      color: $black-grey;
+    }
+
+    h3 {
+      margin-left: 15px;
+      font-size: 15px;
+      font-weight: $semi-bold;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  }
+
+  &__header-title {
+    align-items: center;
+    display: flex;
+
+    svg {
+      color: $white;
+    }
+  }
+
+  &__card {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: rgba($color: $white, $alpha: .05);
+
+    @include tablet {
+      margin-bottom: 25px;
+      padding: 15px 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card-profile {
+    a {
+      margin-bottom: 15px;
+
+      img {
+        height: 35px;
+        width: 35px;
+      }
+
+      p {
+        margin-left: 10px;
+      }
+    }
+  }
+}
