@@ -34,7 +34,7 @@ const index = ({ getPosts }) => {
 }
 
 export const getStaticProps = async() => {
-  const res = await fetch('http://localhost:3000/api/getUserPosts?user_id=1')
+  const res = await fetch('http://localhost:3000/api/getUserPosts?user_id=1&_limit=5')
   const data = await res.json()
   const getPosts = data.users[0].posts
 
