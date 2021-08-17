@@ -1,0 +1,14 @@
+.advertisement {
+  margin-bottom: 60px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+
+  img {
+    border-radius: 10px;
+    object-fit: cover;
+    height: 175px;
+    width: 100%;
+  }
+}
