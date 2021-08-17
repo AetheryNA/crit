@@ -7,8 +7,6 @@ const PostItem = ({ postItems }) => {
   const postedItem = postState.map((post, index) => {
     const userData = post.author
 
-    console.log(post);
-
     return(
       <div className="post-item" key={index}>
         <div className="post-item__profile flex items-center overflow-hidden">
@@ -42,7 +40,12 @@ const PostItem = ({ postItems }) => {
 
   return (
     <>
-      {postedItem}
+      {!postItems.length == 0 ? 
+        postedItem :
+        <div>
+          <p> Couldn't find anything! </p>
+        </div>
+      }
     </>
   )
 }

@@ -12,15 +12,10 @@ const UserProfileBar = ({ currentUser }) => {
           src='/img/pfp.png'
         />
 
-        <h3> { currentUser ? currentUser[0].username : user && (user.username)} </h3>
+        <h3> { currentUser || !currentUser === '' ? currentUser[0].username : 'Not found'} </h3>
       </div>
 
-      { currentUser ? 
-       ''
-       : user && (
-        <UserProfileSettings />
-       )
-      }
+      { user && (currentUser[0].id === user.id ? <UserProfileSettings /> : '')}
 
     </div>
     </>

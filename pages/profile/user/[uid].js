@@ -5,31 +5,33 @@ import PostItem from '../../../src/components/PostItem'
 import UserProfileFriends from '../../../src/components/UserProfileFriends'
 import Feed from "../../../public/img/icons/feed.svg"
 import Friends from "../../../public/img/icons/friends.svg"
+import useUser from '../../../lib/auth/useUser'
 
 const userProfile = ({ userPosts }) => {
+  const { user } = useUser()
   const userPost = userPosts.users[0]
 
   return (
     <>
       <Head>
-        <title> CRIT | { userPost ? userPost.username : 'Loading' } </title>
+        <title> CRIT | { user && ( userPost.username === user.username ? "Me" : userPost.username)} </title>
       </Head>
 
       <UserBanner />
       <div className="profile-pg">
-        <UserProfileBar currentUser={userPosts.users}/>
+        <UserProfileBar currentUser={userPosts && (userPosts.users)}/>
         <div className="profile-pg__dashboard flex lg:flex-row flex-col">
           <div className="dashboard-left">
             <h3 className="flex flex-row">
               <Feed />
-              Their Activity
+              { user && (userPost.id === user.id ? "Your Feed" : "Their Feed")}
             </h3>
-            <PostItem postItems={userPost.posts}/>
+            <PostItem postItems={userPosts && (userPost.posts)}/>
           </div>
           <div className="dashboard-right">
             <h3 className="flex flex-row">
               <Friends />
-              Their Friends
+              { user && (userPost.id === user.id ? "Your Friends" : "Their Friends")}
             </h3>
             <UserProfileFriends />
           </div>
@@ -45,7 +47,8 @@ export const getServerSideProps = async(context) => {
 
   return {
     props : {
-      userPosts
+      userPosts,
+      fallback: false
     }
   }
 }
