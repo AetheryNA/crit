@@ -8,7 +8,7 @@ const PostItem = ({ postItems }) => {
     const userData = post.author
 
     return(
-      <div className="post-item" key={index}>
+      <a className="post-item flex flex-col" href={`/post/${post.post_id}`} key={index}>
         <div className="post-item__profile flex items-center overflow-hidden">
           <img
             className="h-8 w-8 rounded-full"
@@ -34,7 +34,7 @@ const PostItem = ({ postItems }) => {
             </div>
           </div>
         </div>
-      </div>
+      </a>
     )
   })
 
