@@ -1,0 +1,67 @@
+.thread {
+  &__profile {
+    margin-bottom: 20px;
+
+    img {
+      margin-right: 10px;
+      object-fit: cover;
+      height: 35px;
+      width: 35px;
+
+      @include tablet {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: $semi-bold;
+      line-height: 1;
+    }
+  }
+
+  &__wrap {
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__content {
+    img {
+      margin-bottom: 30px;
+      object-fit: cover;
+      max-height: 500px;
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.135rem;
+      line-height: 1.235rem;
+    }
+  }
+
+  &__social-status {
+    margin-top: 20px;
+    cursor: pointer;
+
+    @include tablet {
+      margin-left: 20px;
+    }
+
+    svg {
+      margin-right: 10px;
+      color: $white;
+      transition: $basic-transition;
+      width: 25px;
+    }
+
+    &:hover {
+      svg {
+        color: $dark-orange;
+      }
+    }
+  }
+}

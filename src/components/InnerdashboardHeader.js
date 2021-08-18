@@ -23,7 +23,7 @@ const InnerdashboardHeader = ({ router, iconHome, iconActivity, iconTrending, ic
         { svgTrending && ( <Tag /> )}
         { svgFriends && ( <Friends /> )}
         { svgLobby && ( <Clock /> )}
-        <h3> {dashboardHeaderTitle(router) === 'home' ? title : dashboardHeaderTitle(router)} </h3> 
+        <h3> { title ? title : dashboardHeaderTitle(router)} </h3> 
       </div>
 
       { dashboardHeaderTitle(router) === 'activity feed' ?
