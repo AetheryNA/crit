@@ -3,6 +3,7 @@ import InnerdashboardHeader from '../../src/components/InnerdashboardHeader'
 import TopCards from '../../src/components/TopCards'
 import HomeFriends from '../../src/components/HomeFriends'
 import AdvertisementBlock from '../../src/components/AdvertisementBlock'
+import { withSessionSSR } from '../../lib/auth/session'
 
 const index = ({ getPosts }) => {
   return (
@@ -33,16 +34,17 @@ const index = ({ getPosts }) => {
   )
 }
 
-export const getStaticProps = async() => {
-  const res = await fetch('http://localhost:3000/api/getUserPosts?user_id=1&_limit=5')
-  const data = await res.json()
+export const getServerSideProps = withSessionSSR(async function ({ req, res }) {
+  const user = req.session.get('user')
+  const resURL = await fetch(`http://localhost:3000/api/getUserPosts?user_id=${user.id}&_limit=5`)
+  const data = await resURL.json()
   const getPosts = data.users[0].posts
 
   return {
-    props : {
+    props: { 
       getPosts
-    }
+    },
   }
-}
+})
 
 export default index
