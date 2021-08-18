@@ -1,5 +1,5 @@
 import nc from 'next-connect'
-import withSession from '../../../lib/auth/session'
+import { withSession } from '../../../lib/auth/session'
 
 const handler = nc()
   .use(withSession)
