@@ -1,7 +1,7 @@
 import nc from 'next-connect'
 import prisma from '../../../lib/adapters/prismaClient'
 import bcrypt from 'bcrypt'
-import withSession from '../../../lib/auth/session'
+import { withSession } from '../../../lib/auth/session'
 
 const handler = nc()
   .use(withSession)

@@ -1,5 +1,5 @@
 import nc from 'next-connect'
-import withSession from '../../lib/auth/session'
+import { withSession } from '../../lib/auth/session'
 import Post from '../../lib/models/post'
 import multer from 'multer'
 
