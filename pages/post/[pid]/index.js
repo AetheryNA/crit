@@ -1,12 +1,19 @@
 import Thread from "../../../src/components/Thread"
 import InnerdashboardHeader from '../../../src/components/InnerdashboardHeader'
+import Head from 'next/head'
 
 const index = ({ postData }) => {
   return (
-    <div className="dashboard-left">
-      <InnerdashboardHeader iconActivity={true} title={'thread'}/>
-      { postData && ( <Thread postData={postData}/> )}
-    </div>
+    <>
+      <Head>
+        <title> CRIT | { postData.author && (`${postData.author.username} on CRIT : ${postData.content}`)}</title>
+      </Head>
+
+      <div className="dashboard-left">
+        <InnerdashboardHeader iconActivity={true} title={'thread'}/>
+        { postData && ( <Thread postData={postData}/> )}
+      </div>
+    </>
   )
 }
 

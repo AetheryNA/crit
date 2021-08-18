@@ -46,8 +46,10 @@
   &__social-status {
     margin-top: 20px;
     cursor: pointer;
+    max-height: 25px;
 
     @include tablet {
+      margin-top: 0;
       margin-left: 20px;
     }
 
