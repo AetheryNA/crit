@@ -2,40 +2,22 @@ import { useRouter } from 'next/router'
 
 const activePage = (navItem) => {
   const router = useRouter()
-  let toActive
+  let toActive = ''
 
-  const itemValues = [
-    {
-      path : '/home',
-      name : 'Home'
-    },
-    {
-      path : '/profile/user',
-      name : 'User'
-    },
-    {
-      path : '/activity-feed',
-      name : 'Activity Feed'
-    },
-    {
-      path : '/trending',
-      name : 'Trending'
-    },
-    {
-      path : '/friends',
-      name : 'Friends'
-    },
-    {
-      path : '/lobby',
-      name : 'Lobby'
-    },
-  ]
+  const itemValues = {
+    'Home' : '/home',
+    'User' : '/profile/user',
+    'Activity Feed' : '/activity-feed',
+    'Trending' : '/trending',
+    'Friends' : '/friends',
+    'Lobby' : '/lobby'
+  }
 
-  itemValues.forEach(item => {
-    if (router.pathname.includes(item.path) && navItem.name == item.name) {
+  for (const [key, value] of Object.entries(itemValues)) {
+    if (router.pathname.includes(value) && navItem.name == key) {
       toActive = 'active'
     }
-  });
+  }
 
   return toActive
 }
