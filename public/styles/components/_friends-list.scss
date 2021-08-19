@@ -1,0 +1,44 @@
+.friends-list {
+  &__friend {
+      margin-bottom: 15px;
+
+      @include tablet {
+        margin-bottom: 20px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+    img {
+      margin-right: 10px;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+  
+      @include tablet {
+        margin-right: 15px;
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+
+  &__msg {
+    cursor: pointer;
+
+    svg {
+      color: $white;
+      fill: rgba($color: $black, $alpha: .23);
+      transition: $basic-transition;
+      height: 40px;
+      width: 40px;
+    }
+
+    &:hover {
+      svg {
+        fill: $orange;
+      }
+    }
+  }
+}

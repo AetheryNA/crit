@@ -37,7 +37,7 @@ const navigationItems = [
   {
     name: 'Friends',
     className: 'aside__nav-item',
-    href: '/',
+    href: '/friends',
     svg: <FriendsSVG />,
     isActive: false,
   },
