@@ -8,5 +8,23 @@
       height: 35px;
       width: 35px;
     }
+
+    a {
+      margin-right: 20px;
+
+      p {
+        transition: $basic-transition;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        p {
+          color: $dark-orange;
+        }
+      }
+    }
   }
 }

@@ -26,7 +26,7 @@ const PostItem = ({ postItems }) => {
               ""
               :
               <div className="post-item__image mb-6">
-                <img className="mx-auto" src={post.image_url} />  
+                <img className="mx-auto" src={`/${post.image_url}`} />  
               </div>
             }
             <p>
