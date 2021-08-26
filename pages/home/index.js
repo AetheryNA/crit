@@ -5,7 +5,7 @@ import HomeFriends from '../../src/components/HomeFriends'
 import AdvertisementBlock from '../../src/components/AdvertisementBlock'
 import { withSessionSSR } from '../../lib/auth/session'
 
-const index = ({ getPosts }) => {
+const index = ({ getPosts, getAllFriends }) => {
   return (
     <>
       <div className="dashboard-left">
@@ -16,13 +16,13 @@ const index = ({ getPosts }) => {
         <TopCards />
 
         <div className="dashboard-right__home-section">
-          <InnerdashboardHeader title={'Whos online'} iconFriends={true}/>
-          <HomeFriends />
+          <InnerdashboardHeader title={'Your friends'} iconFriends={true}/>
+          <HomeFriends friends={getAllFriends.getFriends}/>
         </div>
         
         <div className="dashboard-right__home-section">
           <InnerdashboardHeader title={'People you might find interesting'} iconFriends={true}/>
-          <HomeFriends />
+          { !getAllFriends ? <HomeFriends /> : <p> Trouble loading this :/ </p> }
         </div>
 
         <div className="dashboard-right__home-section">
@@ -36,13 +36,23 @@ const index = ({ getPosts }) => {
 
 export const getServerSideProps = withSessionSSR(async function ({ req, res }) {
   const user = req.session.get('user')
-  const resURL = await fetch(`http://localhost:3000/api/getUserPosts?user_id=${user.id}&_limit=5`)
-  const data = await resURL.json()
-  const getPosts = data.users[0].posts
+
+  const [getAllPostsRes, getAllFriendsRes] = await Promise.all([
+    fetch(`http://localhost:3000/api/getUserPosts?user_id=${user.id}&_limit=5`),
+    fetch(`http://localhost:3000/api/getFriends?user_id=${user.id}`),
+  ])
+
+  const [getAllPosts, getAllFriends] = await Promise.all([
+    getAllPostsRes.json(),
+    getAllFriendsRes.json(),
+  ])
+
+  const getPosts = getAllPosts.users[0].posts
 
   return {
     props: { 
-      getPosts
+      getPosts,
+      getAllFriends,
     },
   }
 })

@@ -3,7 +3,7 @@ import useUser from "../../lib/auth/useUser"
 
 const LoginForm = () => {
   const { mutateUser } = useUser({
-    redirectTo: '/',
+    redirectTo: '/home',
     redirectIfFound: true, 
   })
 

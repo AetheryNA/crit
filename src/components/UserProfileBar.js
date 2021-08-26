@@ -1,8 +1,13 @@
-import useUser from "../../lib/auth/useUser"
 import UserProfileSettings from "../../src/components/UserProfileSettings"
+import UserProfileAddFriend from "./UserProfileAddFriend"
 
-const UserProfileBar = ({ currentUser }) => {
-  const { user } = useUser()
+const UserProfileBar = ({ loggedUser, currentUser, friends }) => {
+  let foundFriend
+
+  friends.getFriends.map((friend) => {
+    if(currentUser[0].id == friend.friend_id)
+      return foundFriend = friend.id
+  })
 
   return (
     <>
@@ -15,7 +20,7 @@ const UserProfileBar = ({ currentUser }) => {
         <h3> { currentUser || !currentUser === '' ? currentUser[0].username : 'Not found'} </h3>
       </div>
 
-      { user && (currentUser[0].id === user.id ? <UserProfileSettings /> : '')}
+      { loggedUser && (currentUser[0].id === loggedUser.id ? <UserProfileSettings /> : ( foundFriend ? '' : <UserProfileAddFriend loggedUser={loggedUser} currentUser={currentUser}/>) )}
 
     </div>
     </>

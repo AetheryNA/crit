@@ -14,6 +14,8 @@ model users {
   password String @db.VarChar(255)
   email    String @unique @db.VarChar(255)
   posts    posts[]
+  usersRelationships_users UsersRelationships[] @relation("userList")
+  usersRelationships_friends UsersRelationships[] @relation("friendList")
 }
 
 model posts {
@@ -25,4 +27,20 @@ model posts {
   like_count Int
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt 
+}
+
+model UsersRelationships {
+  id Int @id @default(autoincrement())
+  user users @relation("userList", fields: [user_id], references: [id])
+  friends users @relation("friendList", fields: [friend_id], references: [id])
+  user_id Int
+  friend_id Int
+  type Friend_Type @default(FRIEND)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt 
+}
+
+enum Friend_Type {
+  FRIEND
+  NOT_ASSOCIATED
 }

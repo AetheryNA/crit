@@ -1,0 +1,30 @@
+.user-profile-add-friend {
+  &__button {
+    background-color: $white;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    z-index: 10;
+
+    @include tablet {
+      height: 45px;
+      width: 45px;
+    }
+
+    svg {
+      color: $black-grey;
+      fill: $white;
+      transition: $basic-transition;
+    }
+
+    &:hover {
+      background-color: $orange;
+
+      svg {
+        color: $white;
+        fill: $orange;
+      }
+    }
+  }
+}
