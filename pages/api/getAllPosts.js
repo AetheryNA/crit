@@ -1,5 +1,5 @@
 import nc from 'next-connect'
-import withSession from '../../lib/auth/session'
+import { withSession } from '../../lib/auth/session'
 import prisma from '../../lib/adapters/prismaClient'
 
 const handler = nc()

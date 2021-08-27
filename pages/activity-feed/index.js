@@ -5,7 +5,7 @@ const index = ({ postItems }) => {
   return (
     <>
       <div className="dashboard-left">
-        <InnerdashboardHeader />
+        <InnerdashboardHeader iconActivity={true}/>
         <PostItem postItems={postItems} />
       </div>
       <div className="dashboard-right dashboard-right--small">
