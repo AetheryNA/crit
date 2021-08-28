@@ -11,6 +11,7 @@
   &__picture {
     margin: 0 auto auto;
     max-width: 40px;
+    height: 40px;
     position: relative;
     width: 100%;
   
@@ -20,10 +21,12 @@
   
     @include mobile-xs {
       max-width: 50px;
+      height: 50px;
     }
   
     @include desktop {
       max-width: 80px;
+      height: 80px;
     }
   
     &.active {

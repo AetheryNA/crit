@@ -17,7 +17,8 @@ const index = ({ postItems }) => {
 
 export const getStaticProps = async() => {
   const res = await fetch('http://localhost:3000/api/getAllPosts')
-  const postItems = await res.json()
+  const getAllPosts = await res.json()
+  const postItems = getAllPosts.findPosts
 
   return {
     props: {

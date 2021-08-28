@@ -4,21 +4,21 @@ const UserProfileFriends = () => {
       <div className="user-profile-friends__friend flex flex-row">
         <a href="/" className="flex flex-row items-center">
           <img 
-            src="img/pfp.png" 
+            src="/img/pfp.png" 
             alt="" 
           />
           <p> Alice Prisma </p>
         </a>
         <a href="/" className="flex flex-row items-center">
           <img 
-            src="img/pfp.png" 
+            src="/img/pfp.png" 
             alt="" 
           />
           <p> Alice Prisma </p>
         </a>
         <a href="/" className="flex flex-row items-center">
           <img 
-            src="img/pfp.png" 
+            src="/img/pfp.png" 
             alt="" 
           />
           <p> Alice Prisma </p>

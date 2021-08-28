@@ -1,13 +1,15 @@
 import { useState } from 'react'
+import useUser from '../../lib/auth/useUser'
 
 const Navigation = ({ navigationItems }) => {
+  const { user } = useUser()
   const [items, setItems] = useState(navigationItems)
 
   const menuItems = items.map((item, index) => {
     return (
       <li className={"navigation__menu-item" + " " + item.className} key={index}>
         <a 
-          href={item.href} 
+          href={item.href === '/profile/user' ? user && (item.href.concat('/', user.id)) : item.href} 
           onClick={(e) => {
             handleClick(index) 
           }} 

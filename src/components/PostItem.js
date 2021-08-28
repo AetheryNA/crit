@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Like from '../../public/img/icons/like.svg'
 
 const PostItem = ({ postItems }) => {
-  const [postState, setPostState] = useState(postItems.findPosts)
+  const [postState, setPostState] = useState(postItems)
 
   const postedItem = postState.map((post, index) => {
     const userData = post.author
@@ -11,8 +11,8 @@ const PostItem = ({ postItems }) => {
       <div className="post-item" key={index}>
         <div className="post-item__profile flex items-center overflow-hidden">
           <img
-            className="h-8 w-8 rounded-full"
-            src={userData.avatar_url === '' ? "/img/pfp.png" : userData.avatar_url}
+            className="h-8 w-8 rounded-full object-cover"
+            src={userData.avatar_url === '' ? "/img/pfp.png" : `/${userData.avatar_url}`}
           />
           <a className="ml-3"> {userData.username} </a>
         </div>
@@ -40,7 +40,12 @@ const PostItem = ({ postItems }) => {
 
   return (
     <>
-      {postedItem}
+      {!postItems.length == 0 ? 
+        postedItem :
+        <div>
+          <p> Couldn't find anything! </p>
+        </div>
+      }
     </>
   )
 }

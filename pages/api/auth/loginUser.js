@@ -14,6 +14,7 @@ const handler = nc()
       },
       select: {
         id: true,
+        avatar_url: true,
         username: true,
         password: true,
         email: true,
@@ -29,6 +30,7 @@ const handler = nc()
 
     req.session.set('user', {
       id: loggedUser.id,
+      avatar_url: loggedUser.avatar_url,
       username: loggedUser.username,
       email: loggedUser.email
     })

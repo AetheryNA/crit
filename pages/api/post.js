@@ -1,16 +1,9 @@
 import nc from 'next-connect'
 import withSession from '../../lib/auth/session'
 import Post from '../../lib/models/post'
-import multer from 'multer'
+import sendToServer from '../../src/helpers/sendToServer'
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: './public/uploads',
-    filename: (req, file, cb) => cb(null, file.originalname),
-  })
-})
-
-const fileUpload = upload.single('file')
+const fileUpload = sendToServer('./public/uploads').single('file')
 
 const handler = nc()
   .use(fileUpload)

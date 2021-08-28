@@ -4,9 +4,12 @@
   &__pfp {
     img {
       border-radius: 50%;
+      height: 75px;
+      object-fit: cover;
       width: 75px;
 
       @include tablet {
+        height: 150px;
         width: 150px;
       }
     }

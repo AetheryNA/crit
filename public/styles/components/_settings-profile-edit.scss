@@ -12,6 +12,8 @@
     }
 
     img {
+      border-radius: 50%;
+      object-fit: cover;
       height: 110px;
       width: 110px;
     }
@@ -90,6 +92,32 @@
       position: absolute;
       right: 20px;
       width: 35px;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    height: 110px;
+    width: 110px;
+  }
+
+  .button {
+    margin-top: 60px;
+    border-radius: 7px;
+    color: $white;
+    max-height: 50px;
+    max-width: 350px;
+    width: 100%;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: .5;
+
+      &:hover {
+        background-color: $orange;
+      }
     }
   }
 }

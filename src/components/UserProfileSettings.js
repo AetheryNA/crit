@@ -5,7 +5,7 @@ import SettingsProfileEdit from './SettingsProfileEdit'
 import Settings from '../../public/img/icons/settings.svg'
 import Plus from "../../public/img/icons/plus.svg"
 
-const UserProfileSettings = () => {
+const UserProfileSettings = ({ currentUser }) => {
   const [open, setOpen] = useState(false)
 
   return (
@@ -75,7 +75,7 @@ const UserProfileSettings = () => {
                     </ul>
                   </div>
                   <div className="user-profile-settings__col user-profile-settings__col--3 h-full flex flex-col py-6 shadow-xl w-full md:w-8/12">
-                    <SettingsProfileEdit />
+                    <SettingsProfileEdit userDetails={currentUser}/>
                   </div>
                 </div>
               </Transition.Child>
